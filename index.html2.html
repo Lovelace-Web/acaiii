@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açai de 250ml</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #8a05ff;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+        }
+
+        .circulo-branco {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .quadradinho-acai {
+        width: 60px;
+        height: 60px;
+        background-color: #897acb;
+        border-radius: 8px;
+        position: fixed;
+        right: 10px;
+        top: 70px;
+        transition: background-color 0.3s;
+        z-index: 9999; /* Adiciona esta linha */
+    }
+
+
+        .quadradinho-acai:hover {
+            background-color: #4a2801;
+        }
+
+        .quadradinho-acai p {
+            color: white;
+            text-align: center;
+            line-height: 60px;
+            margin: 0;
+        }
+
+        .selecao-acai {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 2;
+        }
+
+        .selecao-acai img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .preco {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .informacoes,
+        .opcoes,
+        .componentes,
+        .adicionais,
+        .observacoes,
+        .confirmar {
+            background-color: #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .componentes-checkbox input {
+            margin-right: 5px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .copiar-btn {
+            margin-top: 10px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="circulo-branco"></div>
+        <h1>Açai de 250ml</h1>
+        <div class="retangulo-branco"></div>
+        <div class="circulo-branco"></div>
+    </header>
+
+    <div class="quadradinho-acai">
+        <p id="valor-total">R$ 10,00</p>
+    </div>
+
+    <div class="selecao-acai">
+        <img src="C:\Users\guilh\OneDrive\Área de Trabalho\açai/açai.jpg" alt="Açaí de 250ml">
+
+        <div class="preco">R$ 10,00</div>
+
+
+        <div class="opcoes">
+            <h2>Tipo de Pagamento</h2>
+            <label>
+                <input type="radio" name="pagamento" value="dinheiro"> Dinheiro
+            </label>
+            <label>
+                <input type="radio" name="pagamento" value="cartao"> Cartão
+            </label>
+        </div>
+
+        <div class="informacoes">
+            <h2>Escreva seu nome:</h2>
+            <input type="text" id="nome" name="nome">
+
+            <div class="localizacao">
+                <h2>Localização</h2>
+                <p>Escolha a parada:</p>
+                <label>
+                    <input type="radio" name="parada" value="5"> Parada 5, 6, 19 e 20 - Preço: R$ 5,00
+                </label>
+                <label>
+                    <input type="radio" name="parada" value="8"> Parada 1 a 4 e 21 a 26 - Preço: R$ 8,00
+                </label>
+                <label>
+                    <input type="radio" name="parada" value="10"> Parada 27, 28 e 29 - Preço: R$ 10,00
+                </label>
+                <label>
+                    <input type="radio" name="parada" value="0"> Buscar no local - Preço: R$ 00,00
+                </label>
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco">
+            </div>
+        </div>
+
+        <div class="opcoes">
+            <h2>Deseja Leite condensado/Leite em pó?</h2>
+            <p>Escolha até 2 itens</p>
+            <label>
+                <input type="checkbox" name="leiteCondensado" value="Leite Condensado"> Leite Condensado
+            </label>
+            <label>
+                <input type="checkbox" name="leitePo" value="Leite em Pó"> Leite em Pó
+            </label>
+        </div>
+
+        <div class="componentes">
+            <h2>Componentes</h2>
+            <p>Escolha de 1 até 3 itens</p>
+            <div class="componentes-checkbox">
+                <label>
+                    <input type="checkbox" name="componente" value="Granola" data-valor="0.00"> Granola
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Paçoca" data-valor="0.00"> Paçoca
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Amendoim Granulado" data-valor="0.00"> Amendoim Granulado
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Sucrilhos" data-valor="0.00"> Sucrilhos
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Coco Ralado" data-valor="0.00"> Coco Ralado
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Granulado" data-valor="0.00"> Granulado
+                </label>
+
+                <label>
+                    <input type="checkbox" name="componente" value="Trakinas de Morango" data-valor="0.00"> Trakinas de Morango
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Trakinas de Chocolate" data-valor="0.00"> Trakinas de Chocolate
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Chocobol" data-valor="0.00"> Chocobol
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Bala de Goma" data-valor="0.00"> Bala de Goma
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Marshmallow" data-valor="0.00"> Marshmallow
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Canudinho" data-valor="0.00"> Canudinho
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Calda de Chocolate" data-valor="0.00"> Calda de Chocolate
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Calda de Morango" data-valor="0.00"> Calda de Morango
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Creme de Avelã (uma camada)" data-valor="0.00"> Creme de Avelã (uma camada)
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Abacaxi" data-valor="0.00"> Abacaxi
+                </label>
+                <label>
+                    <input type="checkbox" name="componente" value="Banana" data-valor="0.00"> Banana
+                </label>
+            </div>
+        </div>
+
+        <div class="adicionais">
+            <h2>Adicionais</h2>
+            <p>Escolha quantos itens quiser</p>
+            <div class="adicionais-checkbox">
+                <label>
+                    <input type="checkbox" id="morango" name="adicional" value="Morango - R$ 2,00" data-valor="2.00"> Morango - R$ 2,00
+                </label>
+                <label>
+                    <input type="checkbox" id="leiteNinho" name="adicional" value="Leite Ninho - R$ 3,50" data-valor="3.50"> Leite Ninho - R$ 3,50
+                </label>
+                <label>
+                    <input type="checkbox" id="cremeNinho" name="adicional" value="Creme de Ninho - R$ 4,50" data-valor="4.50">> Creme de Ninho - R$ 4,50
+                </label>
+                <label>
+                    <input type="checkbox" id="farinhaLactea" name="adicional" value="Farinha Láctea - R$ 3,50" data-valor="3.50">> Farinha Láctea - R$ 3,50
+                </label>
+                <label>
+                    <input type="checkbox" id="nutella" name="adicional" value="Nutella - R$ 7,00" data-valor="7.00">> Nutella - R$ 7,00
+                </label>
+                <label>
+                    <input type="checkbox" id="ovoMaltine" name="adicional" value="Ovo Maltine - R$ 3,50" data-valor="3.50">> Ovo Maltine - R$ 3,50
+                </label>
+                <label>
+                    <input type="checkbox" id="mms" name="adicional" value="M&M's - R$ 4,00" data-valor="4.00">> M&M's - R$ 4,00
+                </label>
+                <label>
+                    <input type="checkbox" id="oreo" name="adicional" value="Oreo - R$ 2,50" data-valor="2.50">> Oreo - R$ 2,50
+                </label>
+                <label>
+                    <input type="checkbox" id="bombom" name="adicional" value="Bombom - R$ 2,50" data-valor="2.50">> Bombom - R$ 2,50
+                </label>
+                <label>
+                    <input type="checkbox" id="kitkat" name="adicional" value="Kitkat - R$ 3,00" data-valor="3.00">> Kitkat - R$ 3,00
+                </label>
+                <label>
+                    <input type="checkbox" id="stikadinho" name="adicional" value="Stikadinho - R$ 2,50" data-valor="2.50">> Stikadinho - R$ 2,50
+                </label>
+                <label>
+                    <input type="checkbox" id="bisPreto" name="adicional" value="Bis Preto - R$ 2,50" data-valor="2.50">> Bis Preto - R$ 2,50
+                </label>
+                <label>
+                    <input type="checkbox" id="bisBranco" name="adicional" value="Bis Branco - R$ 2,50" data-valor="2.50">> Bis Branco - R$ 2,50
+                </label>
+                <label>
+                    <input type="checkbox" id="bisBrancoPreto" name="adicional" value="Bis Branco e Preto - R$ 2,50" data-valor="2.50">> Bis Branco e Preto - R$ 2,50
+                </label>
+                <label>
+                    <input type="checkbox" id="balaFini" name="adicional" value="Bala Fini - R$ 2,00" data-valor="2.00">> Bala Fini - R$ 2,00
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="observacoes">
+        <h2>Observações</h2>
+        <textarea id="observacoes" name="observacoes" rows="4" cols="50"></textarea>
+    </div>
+
+    <div class="confirmar">
+        <h2>Confirmar Pedido</h2>
+        <button class="copiar-btn" onclick="copiarPedido()">Solicitar açai</button>
+    </div>
+
+    <script>
+        var valorFixo = 10.00; // Valor inicial do açaí
+        var radiosParada = document.querySelectorAll('input[name="parada"]');
+        var checkboxesAdicionais = document.querySelectorAll('input[name="adicional"]');
+        var checkboxesComponentes = document.querySelectorAll('input[name="componente"]');
+        var valorTotalElement = document.getElementById('valor-total');
+
+        function calcularValorTotal() {
+            var valorAtual = parseFloat(valorFixo); // Inicia com o valor fixo
+
+            radiosParada.forEach(function (radio) {
+                if (radio.checked) {
+                    // Adiciona o valor da parada selecionada
+                    valorAtual += parseFloat(radio.value);
+                }
+            });
+
+            checkboxesAdicionais.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    // Adiciona o valor do adicional selecionado
+                    valorAtual += parseFloat(checkbox.getAttribute('data-valor'));
+                }
+            });
+
+            var componentesSelecionados = 0;
+            checkboxesComponentes.forEach(function (checkbox) {
+                if (checkbox.checked) {
+                    // Limita a seleção de componentes a três
+                    if (componentesSelecionados < 3) {
+                        valorAtual += parseFloat(checkbox.getAttribute('data-valor'));
+                        componentesSelecionados++;
+                    } else {
+                        checkbox.checked = false; // Desmarca se exceder o limite
+                    }
+                }
+            });
+
+            valorTotalElement.textContent = 'R$ ' + valorAtual.toFixed(2);
+        }
+
+        radiosParada.forEach(function (radio) {
+            radio.addEventListener('change', calcularValorTotal);
+        });
+
+        checkboxesAdicionais.forEach(function (checkbox) {
+            checkbox.addEventListener('change', calcularValorTotal);
+        });
+
+        checkboxesComponentes.forEach(function (checkbox) {
+            checkbox.addEventListener('change', calcularValorTotal);
+        });
+
+        function copiarPedido() {
+    var nome = encodeURIComponent(document.getElementById('nome').value);
+    var observacoes = encodeURIComponent(document.getElementById('observacoes').value);
+    var tipoPagamento = encodeURIComponent(document.querySelector('input[name="pagamento"]:checked')?.value);
+    var endereco = document.getElementById('endereco').value;
+
+    // Adiciona o trecho para recuperar o valor da parada
+    var paradaSelecionada = document.querySelector('input[name="parada"]:checked');
+    var localizacao = paradaSelecionada ? paradaSelecionada.parentNode.textContent.trim() : '';
+
+    // Verifica se campos obrigatórios estão preenchidos
+    if (!nome || !localizacao || !tipoPagamento || !endereco) {
+        alert("Por favor, preencha todos os campos obrigatórios.");
+        return;
+    }
+
+    var pedido = `Nome: ${nome}\nObservações: ${observacoes}\nTipo de Pagamento: ${tipoPagamento}\n`;
+
+    // Adiciona a localização à mensagem final
+    pedido += `\nParada Selecionada: ${localizacao}\n`;
+
+    // Adiciona o endereço à mensagem final
+    pedido += `\nEndereço: ${endereco}\n`;
+
+    pedido += '\nAdicionais Selecionados:\n';
+    checkboxesAdicionais.forEach(function (checkbox) {
+        if (checkbox.checked) {
+            pedido += `- ${checkbox.value}\n`;
+        }
+    });
+
+    pedido += '\nComponentes Selecionados:\n';
+    checkboxesComponentes.forEach(function (checkbox) {
+        if (checkbox.checked) {
+            pedido += `- ${checkbox.value}\n`;
+        }
+    });
+    pedido += `\nObservações:\n${observacoes}\n`;
+
+    // Adiciona o valor total ao pedido
+    pedido += `\nValor Total: ${valorTotalElement.textContent}`;
+
+    // Constrói o link do WhatsApp
+    var whatsappLink = `https://wa.me/5551985109343?text=${encodeURIComponent(pedido)}`;
+
+    // Abre o link no navegador
+    window.open(whatsappLink);
+}
+
+    </script>
+</body>
+
+</html>

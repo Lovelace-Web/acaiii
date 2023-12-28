@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Açaiteria Exemplo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #8a05ff;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .produto {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: calc(45% - 40px); /* Ajustando a largura das colunas com margens */
+            
+                 /* Adicione a seguinte definição para a div da imagem */
+   bottom: 2px; /* Adicione um espaçamento inferior entre a imagem e as informações do produto */
+}
+    /* Adicione o seguinte trecho para ajustar a margem dos produtos */
+    .produto:nth-child(2n + 1) {
+        margin-left: 20px;
+        margin-right: 10px;
+    }
+
+    /* Adicione o seguinte trecho para ajustar a margem dos produtos */
+    .produto:nth-child(2n) {
+        margin-right: 20px;
+        margin-left: 10px;
+    }
+
+    /* Adicione o seguinte trecho para ajustar a margem dos produtos */
+    .produto:nth-child(n + 3) {
+        margin-top: 40px; /* Ajuste a margem superior para um afastamento ainda maior */
+    }
+
+        }
+        
+        /* Adicione o seguinte trecho para ajustar a margem dos produtos */
+        .produto:nth-child(2n + 1) {
+            margin-left: 20px;
+            margin-right: 10px;
+        }
+
+        /* Adicione o seguinte trecho para ajustar a margem dos produtos */
+        .produto:nth-child(2n) {
+            margin-right: 20px;
+            margin-left: 10px;
+        }
+
+        /* Adicione o seguinte trecho para ajustar a margem dos produtos */
+        .produto:nth-child(n + 3) {
+            margin-top: 40px; /* Ajuste a margem superior para um afastamento ainda maior */
+        }
+
+        .container {
+            width: 80%;
+            margin-left: 18%; /* Ajuste a margem esquerda do produto*/
+            margin-right: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            position: relative;
+            padding-top: 50px; /* Ajuste o espaço acima do container */
+        }
+
+        .coluna-roxa {
+            background-color: #8003ed;
+            width: 15vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            left: 0;
+            top: 0; /* Ajuste a posição para fixar no topo */
+            z-index: 1; /* Adicionado para garantir que a coluna-roxa esteja acima do conteúdo */
+        }
+
+        /* Adicione o seguinte trecho para garantir que os produtos não sobreponham a coluna-roxa */
+        .container {
+            z-index: 0;
+        }
+
+        /* Adicione o seguinte trecho para garantir que os produtos não sobreponham a coluna-roxa */
+        .produto {
+            z-index: 2;
+        }
+
+        .circulo-branco {
+            background-color: white;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .texto-empresa {
+            color: black;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .retangulo-branco {
+            background-color: white;
+            width: 90%;
+            height: 500px;
+            position: absolute;
+            bottom: 30px;
+        }
+
+        .coluna-verde {
+            background-color: #00aa00;
+            flex-grow: 1;
+        }
+
+        .produto img {
+    width: 300px; /* Ajuste o tamanho desejado para a largura das imagens */
+    height: 300px; /* Ajuste o tamanho desejado para a altura das imagens */
+    object-fit: cover; /* Mantenha a proporção da imagem e cubra a área definida */
+    margin-
+    
+    </style>
+</head>
+
+<body>
+
+    
+
+    <div class="coluna-roxa">
+        <div class="circulo-branco"></div>
+        <div class="texto-empresa">Açai da Sei la</div>
+        <div class="coluna-verde"></div>
+        <div class="retangulo-branco"></div>
+    </div>
+
+    <header>
+        <h1>Açaiteria Exemplo</h1>
+    </header>
+
+    <div class="container">
+        <div class="produto">
+            <img src="C:\Users\guilh\OneDrive\Área de Trabalho\açai\açai para todos.jpg" alt="Açaí 250ml">
+            <div class="produto-nome">Açaí de 250ml</div>
+            <div class="produto-descricao">Delicioso açaí de alta qualidade. Perfeito para uma pausa refrescante.</div>
+            <div class="produto-preco">R$ 10,00</div>
+            <button class="botao-comprar" onclick="redirecionar('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/a%C3%A7ai/index.html2.html')">Comprar</button>
+        </div>
+
+        <div class="produto">
+            
+            <img src="C:\Users\guilh\OneDrive\Área de Trabalho\açai\açai para todos.jpg" alt="Açaí 300ml">
+            <div class="produto-nome">Açaí de 300ml</div>
+            <div class="produto-descricao">Aproveite um copo generoso de açaí para compartilhar com os amigos.</div>
+            <div class="produto-preco">R$ 13,00</div>
+            <button class="botao-comprar" onclick="redirecionar('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/a%C3%A7ai/index.html3.html')">Comprar</button>
+        </div>
+
+        <!-- Adicione mais produtos conforme necessário -->
+
+        <!-- Nova linha de produtos -->
+        <div class="produto">
+            <img src="C:\Users\guilh\OneDrive\Área de Trabalho\açai\açai para todos.jpg" alt="Açaí 400ml">
+            <div class="produto-nome">Açaí de 400ml</div>
+            <div class="produto-descricao">Açaí refrescante, ideal para uma porção individual.</div>
+            <div class="produto-preco">R$ 16,00</div>
+            <button class="botao-comprar" onclick="redirecionar('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/a%C3%A7ai/index.html4.html')">Comprar</button>
+        </div>
+
+        <div class="produto">
+            <img src="C:\Users\guilh\OneDrive\Área de Trabalho\açai\açai para todos.jpg" alt="Açaí 500ml">
+            <div class="produto-nome">Açaí de 500ml</div>
+            <div class="produto-descricao">Porção generosa de açaí para saciar sua vontade.</div>
+            <div class="produto-preco">R$ 20,00</div>
+            <button class="botao-comprar" onclick="redirecionar('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/a%C3%A7ai/index.html5.html')">Comprar</button>
+        </div>
+
+        <!-- Nova linha de produtos -->
+        <div class="produto">
+            <img src="C:\Users\guilh\OneDrive\Área de Trabalho\açai\açai para todos.jpg" alt="Açaí 700ml">
+            <div class="produto-nome">Açaí de 700ml</div>
+            <div class="produto-descricao">Açaí para compartilhar com a família e os amigos.</div>
+            <div class="produto-preco">R$ 26,00</div>
+            <button class="botao-comprar" onclick="redirecionar('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/a%C3%A7ai/index.html7.html')">Comprar</button>
+        </div>
+
+        <div class="produto">
+            <img src="C:\Users\guilh\OneDrive\Área de Trabalho\açai\açai para todos.jpg" alt="Açaí 1 Litro">
+            <div class="produto-nome">Açaí de 1 Litro</div>
+            <div class="produto-descricao">Grande quantidade de açaí para aproveitar por mais tempo.</div>
+            <div class="produto-preco">R$ 40,00</div>
+            <button class="botao-comprar" onclick="redirecionar('file:///C:/Users/guilh/OneDrive/%C3%81rea%20de%20Trabalho/a%C3%A7ai/index.html1000.html')">Comprar</button>
+        </div>
+    </div>
+
+    <script>
+        function redirecionar(url) {
+            window.location.href = url;
+        }
+    </script>
+
+</body>
+
+</html>
